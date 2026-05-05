@@ -1421,20 +1421,57 @@
         }
 
         @media (max-width: 640px) {
-            section { padding: 72px 0; }
-            .hero-inner { padding: 100px 22px 56px; }
-            nav { padding: 16px 22px; }
-            nav.scrolled { padding: 12px 22px; }
+            section { padding: 60px 0; }
+            .wrap { padding: 0 20px; }
+            .hero-inner { padding: 100px 20px 56px; }
+            nav { padding: 16px 20px; }
+            nav.scrolled { padding: 12px 20px; }
+            .nav-link { display: none; }
+            .nav-logo { font-size: 17px; }
+
+            /* Stats — tighter cells */
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat { padding: 20px 10px; }
+            .stat-num { font-size: 34px; }
+
+            /* Quote block — fix overly wide side padding */
+            .quote-full { padding: 28px 20px; }
+            .quote-full::before { font-size: 60px; left: 16px; top: 4px; }
+            .quote-full-text { font-size: 17px; padding-left: 0; }
+
+            /* Use cases */
             .uc-grid { grid-template-columns: 1fr; }
+
+            /* Content rows */
+            .ch-row { padding: 14px 12px; }
+            .tension-item { padding: 16px; }
+            .book-card { padding: 28px 20px; }
+
+            /* Bundles */
+            .bundle-row { padding: 24px 20px; }
+            .bundle-right { min-width: unset; width: 100%; }
+            .bundle-price { font-size: 38px; }
+
+            /* Lead magnet */
             .lm-form { flex-direction: column; }
-            .hero-ctas { flex-direction: column; align-items: center; }
-            .fcta-btns { flex-direction: column; align-items: center; }
+            .lm-card { padding: 44px 20px; }
+
+            /* CTAs — full-width stretch so they're easy to tap */
+            .hero-ctas { flex-direction: column; align-items: stretch; }
+            .fcta-btns { flex-direction: column; align-items: stretch; }
+            .hero-ctas .btn, .fcta-btns .btn { justify-content: center; }
+
+            /* FAQ — generous tap targets */
+            .faq-q { padding: 18px 20px; }
+            .faq-a-inner { padding: 0 20px 18px; }
+
+            /* Footer */
             .footer-inner { flex-direction: column; text-align: center; }
             .footer-links { justify-content: center; }
-            .lm-card { padding: 44px 24px; }
-            .sticky-bar { width: calc(100% - 32px); justify-content: center; }
-            .nav-link { display: none; }
-            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+
+            /* Sticky bar — drop thumbnail to give text + button room */
+            .sticky-bar { width: calc(100% - 32px); gap: 12px; padding: 11px 18px; justify-content: space-between; }
+            .sticky-thumb { display: none; }
         }
     </style>
 </head>
