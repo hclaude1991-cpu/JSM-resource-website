@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Local Church | John Siebeling | Resource for Pastors</title>
+    <meta name="description" content="Help people move from attending church to being planted in church. The Local Church by John Siebeling is a practical resource for pastors, new members, growth track, and church next steps pathways.">
+    <meta name="keywords" content="church engagement resource, new members class resource, church assimilation resource, discipleship books for churches, local church book for pastors, church attendance and serving resource, next steps church resource">
+    <meta property="og:title" content="The Local Church — Move People From Attending to Planted">
+    <meta property="og:description" content="A simple resource that helps pastors move people from attending church to being planted in church.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== RESET ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===== TOKENS — clean white / near-black ===== */
+        :root {
+            /* Backgrounds */
+            --dark:      #0D0D12;   /* near-black — dark sections */
+            --dark-card: #17171E;   /* slightly lighter for cards on dark */
+            --cream:     #FFFFFF;   /* pure white — light sections */
+            --cream-card:#F0F0F6;   /* card bg on light sections */
+            --white:     #FFFFFF;
+
+            /* Neutral accent — black/dark, no color */
+            --tan:        #111111;
+            --tan-light:  #444444;
+            --tan-pale:   rgba(0, 0, 0, 0.06);
+            --tan-border: rgba(0, 0, 0, 0.11);
+
+            /* Text */
+            --text-dark:   #0A0A12;
+            --text-mid:    #555560;
+            --text-muted:  #909098;
+            --text-light:  #F5F5F8;
+            --text-dim:    rgba(245, 245, 248, 0.58);
+
+            /* Misc */
+            --radius-card: 28px;
+            --radius-btn:  100px;
+            --max:         1160px;
+            --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.65;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { display: block; max-width: 100%; }
+
+        /* ===== DISPLAY FONT (condensed all-caps — the Bevere move) ===== */
+        .display {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            line-height: 0.96;
+        }
+
+        .display-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: clamp(28px, 4vw, 48px);
+        }
+
+        /* ===== LAYOUT ===== */
+        .wrap {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        .section-dark  { background: var(--dark); }
+        .section-cream { background: var(--cream); }
+        .section-white { background: var(--white); }
+
+        section { padding: 96px 0; }
+
+        /* Thin tan rule between sections */
+        .tan-rule {
+            width: 100%;
+            height: 1px;
+            background: var(--tan-border);
+        }
+
+        /* ===== EYEBROW ===== */
+        .eyebrow {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--tan);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .eyebrow-light { color: var(--tan-light); }
+
+        /* ===== BUTTONS — pill, outlined, spaced caps ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            border-radius: var(--radius-btn);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid;
+            transition: all 0.25s var(--ease);
+            white-space: nowrap;
+        }
+
+        /* On dark bg */
+        .btn-dark-outline {
+            border-color: rgba(244,241,235,0.4);
+            color: var(--text-light);
+            background: transparent;
+        }
+        .btn-dark-outline:hover {
+            border-color: var(--text-light);
+            background: rgba(255,255,255,0.07);
+        }
+
+        /* On dark bg — tan fill (primary) */
+        .btn-tan {
+            border-color: var(--tan);
+            background: var(--tan);
+            color: var(--white);
+        }
+        .btn-tan:hover {
+            background: var(--tan-light);
+            border-color: var(--tan-light);
+            transform: translateY(-1px);
+        }
+
+        /* On light bg */
+        .btn-cream-outline {
+            border-color: var(--tan);
+            color: var(--tan);
+            background: transparent;
+        }
+        .btn-cream-outline:hover {
+            background: var(--tan-pale);
+        }
+
+        /* On light bg — dark fill */
+        .btn-dark-fill {
+            border-color: var(--dark);
+            background: var(--dark);
+            color: var(--text-light);
+        }
+        .btn-dark-fill:hover {
+            background: var(--text-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-lg { padding: 16px 36px; font-size: 16px; }
+        .arrow::after { content: ' →'; }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 200;
+            padding: 22px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: padding 0.3s var(--ease), background 0.3s var(--ease), border-color 0.3s var(--ease);
+            border-bottom: 1px solid transparent;
+        }
+
+        nav.scrolled {
+            padding: 14px 48px;
+            background: rgba(43, 42, 39, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom-color: rgba(139,115,85,0.2);
+        }
+
+        .nav-logo {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .nav-logo span { color: var(--tan-light); }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: var(--text-dark); }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: var(--white);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-bg-texture {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(0,0,0,0.025) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 130px 48px 80px;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            align-items: center;
+            gap: 80px;
+            position: relative;
+        }
+
+        .hero-series {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-series::before {
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 1px;
+            background: var(--text-muted);
+            flex-shrink: 0;
+        }
+
+        .hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: clamp(52px, 7vw, 88px);
+            text-transform: uppercase;
+            line-height: 0.94;
+            letter-spacing: 0.01em;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--text-dark);
+            opacity: 0.45;
+        }
+
+        .hero-sub {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 18px;
+            color: var(--text-mid);
+            line-height: 1.75;
+            max-width: 500px;
+            margin: 24px 0 40px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 52px;
+        }
+
+        .hero-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--tan-border);
+            margin-bottom: 28px;
+        }
+
+        .hero-proof {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .proof-faces { display: flex; }
+
+        .proof-face {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--white);
+            background: var(--cream-card);
+            margin-left: -8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--tan);
+        }
+        .proof-face:first-child { margin-left: 0; }
+
+        .proof-text {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .proof-text strong { color: var(--text-dark); }
+
+        /* Book mockup */
+        .hero-book {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .book-card {
+            background: var(--cream-card);
+            border-radius: 24px;
+            padding: 40px 32px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.1),
+                0 0 0 1px var(--tan-border);
+            position: relative;
+            width: 100%;
+        }
+
+        /* Replace .book-cover-css with actual <img> when available */
+        .book-cover-css {
+            width: 180px;
+            height: 258px;
+            background: linear-gradient(155deg, #1e1e30 0%, #0f0f20 100%);
+            border-radius: 4px 12px 12px 4px;
+            border-left: 5px solid rgba(0,0,0,0.5);
+            box-shadow:
+                0 16px 40px rgba(0,0,0,0.45),
+                -4px 4px 0 rgba(139,115,85,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 28px 20px;
+            text-align: center;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .cover-series {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 8px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--tan-light);
+            font-weight: 700;
+        }
+
+        .cover-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 1.0;
+            letter-spacing: 0.02em;
+        }
+
+        .cover-rule {
+            width: 28px;
+            height: 1px;
+            background: var(--tan-light);
+            opacity: 0.5;
+        }
+
+        .cover-author {
+            font-size: 10px;
+            color: rgba(255,255,255,0.38);
+            letter-spacing: 0.06em;
+        }
+
+        .book-card-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .book-card-author {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .book-card-price {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--tan);
+            margin-bottom: 20px;
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            background: var(--dark);
+            border-top: 1px solid var(--tan-border);
+            border-bottom: 1px solid var(--tan-border);
+        }
+
+        .stats-inner {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 48px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stat {
+            padding: 28px 20px;
+            text-align: center;
+            border-right: 1px solid rgba(139,115,85,0.15);
+        }
+        .stat:last-child { border-right: none; }
+
+        .stat-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 42px;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            color: var(--tan-light);
+            display: block;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .stat-lbl {
+            font-size: 12px;
+            color: var(--text-dim);
+            letter-spacing: 0.04em;
+        }
+
+        /* ===== PAIN SECTION (cream) ===== */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 72px;
+            align-items: start;
+        }
+
+        .section-label-col {
+            padding-top: 4px;
+        }
+
+        .section-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: clamp(38px, 5vw, 60px);
+            text-transform: uppercase;
+            line-height: 0.95;
+            letter-spacing: 0.01em;
+            color: var(--text-dark);
+        }
+
+        .section-label-light {
+            color: var(--text-light);
+        }
+
+        .pain-content h2 {
+            font-family: 'Lora', serif;
+            font-size: clamp(24px, 3vw, 38px);
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .pain-content h2 em {
+            font-style: italic;
+            color: var(--tan);
+        }
+
+        .pain-content p {
+            font-size: 16px;
+            color: var(--text-mid);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .tension-list {
+            list-style: none;
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .tension-item {
+            background: var(--white);
+            border: 1px solid var(--tan-border);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: border-color 0.2s;
+        }
+        .tension-item:hover { border-color: var(--tan); }
+
+        .t-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--tan-pale);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .t-text {
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.5;
+            padding-top: 6px;
+        }
+
+        /* ===== QUOTE (full width on cream) ===== */
+        .quote-full {
+            background: var(--white);
+            border: 1px solid var(--tan-border);
+            border-radius: var(--radius-card);
+            padding: 44px 52px;
+            margin-top: 48px;
+            position: relative;
+        }
+
+        .quote-full::before {
+            content: '\201C';
+            font-family: 'Lora', serif;
+            font-size: 96px;
+            color: var(--tan);
+            opacity: 0.18;
+            position: absolute;
+            top: 8px;
+            left: 40px;
+            line-height: 1;
+        }
+
+        .quote-full-text {
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            max-width: 720px;
+            padding-left: 8px;
+        }
+
+        .quote-full-attr {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .q-ava {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--cream-card);
+            border: 2px solid var(--tan-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--tan);
+            flex-shrink: 0;
+        }
+
+        .q-name {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+        }
+
+        .q-role {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ===== VIDEO (dark) ===== */
+        .video-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-heading {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: clamp(44px, 6vw, 76px);
+            text-transform: uppercase;
+            line-height: 0.94;
+            color: var(--text-light);
+            margin: 12px 0 20px;
+        }
+
+        .video-sub {
+            font-family: 'Lora', serif;
+            font-size: 17px;
+            color: var(--text-dim);
+            line-height: 1.75;
+            margin-bottom: 44px;
+        }
+
+        .video-embed {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: var(--dark-card);
+            border: 1px solid var(--tan-border);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            margin-bottom: 18px;
+        }
+
+        .video-ph {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .play-btn {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            border: 2px solid var(--tan-border);
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s var(--ease);
+            animation: pulse-ring 2.5s ease-in-out infinite;
+        }
+
+        .play-btn:hover {
+            border-color: var(--tan-light);
+            background: var(--tan-pale);
+            transform: scale(1.08);
+        }
+
+        .play-btn svg { width: 24px; height: 24px; fill: var(--tan-light); margin-left: 4px; }
+
+        @keyframes pulse-ring {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(139,115,85,0.3); }
+            50%       { box-shadow: 0 0 0 14px rgba(139,115,85,0); }
+        }
+
+        .video-ph p { font-size: 13px; color: var(--text-dim); }
+
+        .video-caption { font-size: 13px; color: var(--text-dim); }
+
+        /* ===== USE CASES (cream) ===== */
+        .uc-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 72px;
+            align-items: start;
+        }
+
+        .uc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .uc-card {
+            background: var(--white);
+            border: 1px solid var(--tan-border);
+            border-radius: 20px;
+            padding: 26px;
+            transition: all 0.25s var(--ease);
+        }
+        .uc-card:hover {
+            border-color: var(--tan);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(139,115,85,0.12);
+        }
+
+        .uc-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--tan-pale);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .uc-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .uc-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* ===== WHAT'S INSIDE (dark) ===== */
+        .inside-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 72px;
+            align-items: center;
+        }
+
+        .inside-left h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: clamp(44px, 6vw, 72px);
+            text-transform: uppercase;
+            line-height: 0.94;
+            color: var(--text-light);
+            margin: 12px 0 28px;
+        }
+
+        .inside-left p {
+            font-size: 16px;
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin-bottom: 36px;
+        }
+
+        .chapter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .ch-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 18px;
+            border-radius: 12px;
+            transition: background 0.2s;
+            cursor: default;
+        }
+        .ch-row:hover { background: rgba(139,115,85,0.08); }
+
+        .ch-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--tan-light);
+            min-width: 24px;
+            padding-top: 2px;
+            opacity: 0.6;
+            letter-spacing: 0.04em;
+        }
+
+        .ch-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-light);
+            margin-bottom: 3px;
+        }
+
+        .ch-sub {
+            font-size: 13px;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        /* Book 3D on dark */
+        .book-3d-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .book-3d {
+            width: 195px;
+            height: 278px;
+            background: linear-gradient(155deg, #1e1e30 0%, #0f0f20 100%);
+            border-radius: 3px 14px 14px 3px;
+            border-left: 7px solid rgba(0,0,0,0.5);
+            box-shadow:
+                -5px 0 10px rgba(0,0,0,0.6),
+                0 20px 55px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 22px;
+            text-align: center;
+            gap: 10px;
+            transform: perspective(800px) rotateY(-7deg);
+        }
+
+        .b3d-series {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 8px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--tan-light);
+            font-weight: 700;
+        }
+
+        .b3d-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 1.0;
+        }
+
+        .b3d-rule { width: 28px; height: 1px; background: var(--tan-light); opacity: 0.45; }
+
+        .b3d-author { font-size: 10px; color: rgba(255,255,255,0.35); }
+
+        .series-chips {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .chip {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: var(--dark-card);
+            border: 1px solid rgba(139,115,85,0.15);
+            color: var(--text-dim);
+        }
+
+        .chip.active {
+            border-color: var(--tan-border);
+            color: var(--tan-light);
+        }
+
+        /* ===== BUNDLES (cream) ===== */
+        .bundles-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 72px;
+            align-items: start;
+        }
+
+        .bundles-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .bundle-row {
+            background: var(--white);
+            border: 1px solid var(--tan-border);
+            border-radius: var(--radius-card);
+            padding: 32px 36px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            transition: all 0.25s var(--ease);
+        }
+        .bundle-row:hover {
+            border-color: var(--tan);
+            box-shadow: 0 8px 28px rgba(139,115,85,0.1);
+        }
+
+        .bundle-row.featured {
+            border-color: var(--tan);
+            background: var(--cream);
+        }
+
+        .bundle-info { flex: 1; }
+
+        .bundle-badge {
+            display: inline-block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--tan);
+            background: var(--tan-pale);
+            border: 1px solid var(--tan-border);
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-bottom: 10px;
+        }
+
+        .bundle-name {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .bundle-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .bundle-items {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .bundle-item-tag {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            background: var(--cream-card);
+            border-radius: 6px;
+            color: var(--text-mid);
+        }
+
+        .bundle-right {
+            text-align: right;
+            flex-shrink: 0;
+            min-width: 140px;
+        }
+
+        .bundle-price {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 46px;
+            color: var(--text-dark);
+            line-height: 1;
+            letter-spacing: -0.01em;
+        }
+
+        .bundle-price-was {
+            font-size: 15px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-left: 6px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+        }
+
+        .bundle-price-note {
+            display: block;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== LEAD MAGNET (dark) ===== */
+        .lm-card {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--dark-card);
+            border: 1px solid var(--tan-border);
+            border-radius: var(--radius-card);
+            padding: 60px 52px;
+        }
+
+        .lm-pdf {
+            width: 64px;
+            height: 80px;
+            background: var(--dark);
+            border: 1px solid var(--tan-border);
+            border-radius: 8px;
+            margin: 0 auto 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .lm-pdf-emoji { font-size: 22px; }
+
+        .lm-pdf-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 8px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--tan-light);
+            font-weight: 700;
+        }
+
+        .lm-heading {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: clamp(36px, 5vw, 56px);
+            text-transform: uppercase;
+            line-height: 0.96;
+            color: var(--text-light);
+            margin: 12px 0 18px;
+        }
+
+        .lm-sub {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            color: var(--text-dim);
+            line-height: 1.75;
+            margin-bottom: 34px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .lm-form {
+            display: flex;
+            gap: 10px;
+            max-width: 440px;
+            margin: 0 auto 14px;
+        }
+
+        .lm-input {
+            flex: 1;
+            padding: 14px 20px;
+            background: var(--dark);
+            border: 1.5px solid rgba(139,115,85,0.3);
+            border-radius: var(--radius-btn);
+            color: var(--text-light);
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .lm-input::placeholder { color: var(--text-dim); }
+        .lm-input:focus { border-color: var(--tan-light); }
+
+        .lm-note {
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        /* ===== TESTIMONIALS (cream) ===== */
+        .testi-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 72px;
+            align-items: start;
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .testi-card {
+            background: var(--white);
+            border: 1px solid var(--tan-border);
+            border-radius: 20px;
+            padding: 28px;
+            transition: border-color 0.2s;
+        }
+        .testi-card:hover { border-color: var(--tan); }
+
+        .testi-card.wide {
+            grid-column: 1 / -1;
+        }
+
+        .stars {
+            color: var(--tan);
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+        .testi-text {
+            font-family: 'Lora', serif;
+            font-size: 15px;
+            font-style: italic;
+            color: var(--text-mid);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .testi-attr {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testi-ava {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--cream-card);
+            border: 2px solid var(--tan-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 15px;
+            color: var(--tan);
+            flex-shrink: 0;
+        }
+
+        .testi-name {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+        }
+
+        .testi-church { font-size: 12px; color: var(--text-muted); }
+
+        /* ===== FAQ (dark) ===== */
+        .faq-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-heading {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: clamp(44px, 6vw, 72px);
+            text-transform: uppercase;
+            line-height: 0.94;
+            color: var(--text-light);
+            text-align: center;
+            margin: 12px 0 52px;
+        }
+
+        .faq-stack { display: flex; flex-direction: column; gap: 8px; }
+
+        .faq-item {
+            background: var(--dark-card);
+            border: 1px solid rgba(139,115,85,0.18);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .faq-item.open { border-color: var(--tan-border); }
+
+        .faq-q {
+            padding: 20px 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            cursor: pointer;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 17px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            user-select: none;
+        }
+
+        .faq-arrow {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid var(--tan-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--tan-light);
+            flex-shrink: 0;
+            transition: transform 0.28s var(--ease);
+        }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.36s var(--ease); }
+        .faq-item.open .faq-a { max-height: 260px; }
+
+        .faq-a-inner {
+            padding: 0 26px 22px;
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        /* ===== FINAL CTA (cream) ===== */
+        .fcta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+
+        .fcta-heading {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: clamp(52px, 8vw, 96px);
+            text-transform: uppercase;
+            line-height: 0.92;
+            color: var(--text-dark);
+            margin: 12px 0 24px;
+        }
+
+        .fcta-heading em {
+            font-style: italic;
+            color: var(--tan);
+        }
+
+        .fcta-sub {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            color: var(--text-mid);
+            line-height: 1.75;
+            margin-bottom: 40px;
+        }
+
+        .fcta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .fcta-note { font-size: 13px; color: var(--text-muted); }
+        .fcta-note a { color: var(--tan); text-decoration: none; }
+        .fcta-note a:hover { text-decoration: underline; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            border-top: 1px solid var(--tan-border);
+        }
+
+        .footer-inner {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 44px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+        .footer-brand span { color: var(--tan-light); }
+
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+        .footer-link {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-link:hover { color: var(--text-light); }
+
+        .footer-copy { font-size: 12px; color: var(--text-dim); }
+
+        /* ===== STICKY BAR ===== */
+        .sticky-bar {
+            position: fixed;
+            bottom: -90px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(43, 42, 39, 0.97);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--tan-border);
+            border-radius: var(--radius-btn);
+            padding: 12px 18px 12px 22px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            z-index: 150;
+            transition: bottom 0.4s var(--ease);
+            box-shadow: 0 8px 36px rgba(0,0,0,0.5);
+            white-space: nowrap;
+        }
+        .sticky-bar.show { bottom: 22px; }
+
+        .sticky-thumb {
+            width: 30px;
+            height: 42px;
+            border-radius: 2px 6px 6px 2px;
+            background: linear-gradient(150deg, #1e1e30, #0e0e20);
+            border-left: 3px solid rgba(0,0,0,0.4);
+            border: 1px solid rgba(139,115,85,0.2);
+            flex-shrink: 0;
+        }
+
+        .sticky-info strong {
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+        .sticky-info span { font-size: 12px; color: var(--tan-light); }
+
+        /* ===== SCROLL ANIMATION ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+        }
+        .reveal.in { opacity: 1; transform: none; }
+        .reveal.d1 { transition-delay: 0.08s; }
+        .reveal.d2 { transition-delay: 0.16s; }
+        .reveal.d3 { transition-delay: 0.24s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 120px 32px 64px; }
+            .hero-sub { margin: 24px auto 40px; }
+            .hero-ctas { justify-content: center; }
+            .hero-proof { justify-content: center; }
+            .hero-book { order: -1; }
+            .pain-grid, .uc-layout, .bundles-layout, .testi-layout { grid-template-columns: 1fr; gap: 32px; }
+            .inside-layout { grid-template-columns: 1fr; gap: 48px; }
+            .tension-list { grid-template-columns: 1fr; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .uc-grid { grid-template-columns: repeat(2, 1fr); }
+            .testi-grid { grid-template-columns: 1fr; }
+            .bundle-row { flex-direction: column; gap: 20px; }
+            .bundle-right { text-align: left; }
+            .wrap { padding: 0 28px; }
+            .section-label-col { display: none; }
+        }
+
+        @media (max-width: 640px) {
+            section { padding: 72px 0; }
+            .hero-inner { padding: 100px 22px 56px; }
+            nav { padding: 16px 22px; }
+            nav.scrolled { padding: 12px 22px; }
+            .uc-grid { grid-template-columns: 1fr; }
+            .lm-form { flex-direction: column; }
+            .hero-ctas { flex-direction: column; align-items: center; }
+            .fcta-btns { flex-direction: column; align-items: center; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+            .lm-card { padding: 44px 24px; }
+            .sticky-bar { width: calc(100% - 32px); justify-content: center; }
+            .nav-link { display: none; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+    <a href="#" class="nav-logo">John <span>Siebeling</span> Ministries</a>
+    <div class="nav-right">
+        <a href="#lead-magnet" class="nav-link">Free Pastor's Guide</a>
+        <a href="#bundles" class="btn btn-tan" style="padding:10px 22px; font-size:13px;" target="_blank">Order Now →</a>
+    </div>
+</nav>
+
+<!-- ===== HERO (dark) ===== -->
+<div class="hero">
+    <div class="hero-bg-texture"></div>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-series">New Book — Next Steps Series</div>
+            <h1>Move People<br>From <em>Attending</em><br>To <em>Planted.</em></h1>
+            <p class="hero-sub">The Local Church gives pastors a simple, biblical resource to help people understand why the local church matters — and how to take their next step into belonging, serving, and building God's house.</p>
+            <div class="hero-ctas">
+                <a href="#bundles" class="btn btn-tan btn-lg arrow">Order for Your Church</a>
+                <a href="#lead-magnet" class="btn btn-cream-outline btn-lg arrow">Free Pastor's Guide</a>
+            </div>
+            <div class="hero-divider"></div>
+            <div class="hero-proof">
+                <div class="proof-faces">
+                    <div class="proof-face">P</div>
+                    <div class="proof-face">M</div>
+                    <div class="proof-face">K</div>
+                    <div class="proof-face">R</div>
+                </div>
+                <p class="proof-text"><strong>Trusted by pastors</strong> across the country as a practical next-steps resource</p>
+            </div>
+        </div>
+        <div class="hero-book">
+            <div class="book-card">
+                <img src="the local church.jpg" alt="The Local Church by John Siebeling"
+                     style="width:180px; border-radius:2px; margin-bottom:20px; box-shadow: 0 16px 40px rgba(0,0,0,0.25);">
+                <div class="book-card-title">The Local Church</div>
+                <div class="book-card-author">by John Siebeling</div>
+                <div class="book-card-price">From $6 · Case of 100 for $350</div>
+                <a href="#bundles" class="btn btn-dark-fill arrow" style="width:100%; justify-content:center;">Order for Your Church</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+    <div class="stats-inner">
+        <div class="stat">
+            <span class="stat-num">$6</span>
+            <span class="stat-lbl">Per book</span>
+        </div>
+        <div class="stat">
+            <span class="stat-num">$350</span>
+            <span class="stat-lbl">Case of 100 books</span>
+        </div>
+        <div class="stat">
+            <span class="stat-num">4</span>
+            <span class="stat-lbl">Books in the Next Steps Series</span>
+        </div>
+        <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-lbl">Turnkey for any church</span>
+        </div>
+    </div>
+</div>
+
+<div class="tan-rule"></div>
+
+<!-- ===== PAIN (cream) ===== -->
+<section class="section-cream">
+    <div class="wrap">
+        <div class="pain-grid">
+            <div class="section-label-col reveal">
+                <div class="section-label">The Problem</div>
+            </div>
+            <div class="reveal d1">
+                <span class="eyebrow">Every pastor feels this</span>
+                <h2 class="pain-content" style="font-family:'Lora',serif; font-size:clamp(24px,3vw,38px); font-weight:500; color:var(--text-dark); line-height:1.25; margin-bottom:20px;">
+                    Attendance isn't the same<br>as being <em style="color:var(--tan);">planted.</em>
+                </h2>
+                <p style="font-size:16px; color:var(--text-mid); line-height:1.8; margin-bottom:14px;">People come consistently. They enjoy the services. They even call your church home — but they've never fully crossed over into ownership, community, serving, or consistent contribution.</p>
+                <p style="font-size:16px; color:var(--text-mid); line-height:1.8;">The missing piece isn't passion or programs. It's that people haven't been given the language to understand <em>why</em> the local church matters and what their part is in it.</p>
+
+                <ul class="tension-list">
+                    <li class="tension-item">
+                        <div class="t-icon">📉</div>
+                        <p class="t-text">People attend for months but never fully get planted</p>
+                    </li>
+                    <li class="tension-item">
+                        <div class="t-icon">🔄</div>
+                        <p class="t-text">High guest numbers but low conversion to community</p>
+                    </li>
+                    <li class="tension-item">
+                        <div class="t-icon">🙋</div>
+                        <p class="t-text">Consistent shortage of people willing to serve</p>
+                    </li>
+                    <li class="tension-item">
+                        <div class="t-icon">🚪</div>
+                        <p class="t-text">The back door stays open — people drift in and out</p>
+                    </li>
+                </ul>
+
+                <div class="quote-full reveal">
+                    <p class="quote-full-text">"I came across a resource that's helping our people understand the value of being planted in the local church. It's doing things I didn't think a book could do — helping people want to show up consistently and contribute."</p>
+                    <div class="quote-full-attr">
+                        <div class="q-ava">P</div>
+                        <div>
+                            <div class="q-name">Pastor Mike R.</div>
+                            <div class="q-role">Lead Pastor, Southeast Church</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="tan-rule"></div>
+
+<!-- ===== VIDEO (dark) ===== -->
+<section class="section-dark">
+    <div class="wrap">
+        <div class="video-inner">
+            <span class="eyebrow eyebrow-light" style="display:block; text-align:center;">From the Author</span>
+            <div class="video-heading">A Word From<br>Pastor John</div>
+            <p class="video-sub">Why he wrote this book, what it's for, and how churches are using it to help people move from attending to being planted.</p>
+            <div class="video-embed">
+                <!--
+                    SWAP THIS: Replace the placeholder with a real embed.
+                    YouTube: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID"
+                              frameborder="0" allowfullscreen style="border-radius:24px;"></iframe>
+                -->
+                <div class="video-ph">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <p>Pastor John's video — add YouTube or Vimeo embed ID here</p>
+                </div>
+            </div>
+            <p class="video-caption">Approx. 90 seconds · Pastor John explains the heart behind the book</p>
+        </div>
+    </div>
+</section>
+
+<div class="tan-rule"></div>
+
+<!-- ===== USE CASES (cream) ===== -->
+<section class="section-cream">
+    <div class="wrap">
+        <div class="uc-layout">
+            <div class="section-label-col reveal">
+                <div class="section-label">How Churches Use It</div>
+            </div>
+            <div class="reveal d1">
+                <span class="eyebrow">Six ways to put this resource to work</span>
+                <p style="font-family:'Lora',serif; font-size:18px; color:var(--text-mid); line-height:1.75; margin-bottom:36px; max-width:580px;">The Local Church is designed to be a gift — something a pastor hands to a person at a key moment and says, <em>"This is for you."</em></p>
+                <div class="uc-grid">
+                    <div class="uc-card">
+                        <div class="uc-icon">👋</div>
+                        <div class="uc-title">New Guest Follow-Up</div>
+                        <p class="uc-desc">Give it to first or second-time guests as a warm, tangible connection point that reinforces why the local church matters.</p>
+                    </div>
+                    <div class="uc-card">
+                        <div class="uc-icon">✝️</div>
+                        <div class="uc-title">New Believer Gift</div>
+                        <p class="uc-desc">Pair with Fresh Start with God — after someone makes a salvation decision, this is the natural next step.</p>
+                    </div>
+                    <div class="uc-card">
+                        <div class="uc-icon">📋</div>
+                        <div class="uc-title">Growth Track</div>
+                        <p class="uc-desc">Use it as a required or recommended resource in your membership or discipleship pathway.</p>
+                    </div>
+                    <div class="uc-card">
+                        <div class="uc-icon">🙌</div>
+                        <div class="uc-title">Serving Teams</div>
+                        <p class="uc-desc">Help your volunteers understand the theology behind why serving the local church matters eternally.</p>
+                    </div>
+                    <div class="uc-card">
+                        <div class="uc-icon">🏘️</div>
+                        <div class="uc-title">Small Groups</div>
+                        <p class="uc-desc">Use it as a short-series discussion resource around belonging, contribution, and why community matters.</p>
+                    </div>
+                    <div class="uc-card">
+                        <div class="uc-icon">🎓</div>
+                        <div class="uc-title">Membership Classes</div>
+                        <p class="uc-desc">Give people a biblical foundation for commitment to the local church before they officially join.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="tan-rule"></div>
+
+<!-- ===== WHAT'S INSIDE (dark) ===== -->
+<section class="section-dark">
+    <div class="wrap">
+        <div class="inside-layout">
+            <div class="reveal">
+                <span class="eyebrow eyebrow-light">Inside the Book</span>
+                <h2 class="inside-left h2" style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:clamp(44px,6vw,72px); text-transform:uppercase; line-height:0.94; color:var(--text-light); margin:12px 0 28px;">Simple Content.<br>Deep Conviction.</h2>
+                <p style="font-size:16px; color:var(--text-dim); line-height:1.8; margin-bottom:36px; font-family:'Lora',serif;">Written to be accessible — short enough to hand to anyone, deep enough to shift how they see their role in the body of Christ.</p>
+
+                <div class="chapter-list">
+                    <div class="ch-row">
+                        <span class="ch-num">01</span>
+                        <div>
+                            <div class="ch-title">Why the Local Church Matters</div>
+                            <p class="ch-sub">The biblical foundation for why God designed community around the local church</p>
+                        </div>
+                    </div>
+                    <div class="ch-row">
+                        <span class="ch-num">02</span>
+                        <div>
+                            <div class="ch-title">What It Means to Belong</div>
+                            <p class="ch-sub">Moving from casual attendance to genuine spiritual family</p>
+                        </div>
+                    </div>
+                    <div class="ch-row">
+                        <span class="ch-num">03</span>
+                        <div>
+                            <div class="ch-title">Why Consistency Changes Everything</div>
+                            <p class="ch-sub">The role of faithful attendance in spiritual growth and community health</p>
+                        </div>
+                    </div>
+                    <div class="ch-row">
+                        <span class="ch-num">04</span>
+                        <div>
+                            <div class="ch-title">Your Part in Building God's House</div>
+                            <p class="ch-sub">Helping people understand contribution, serving, and ownership</p>
+                        </div>
+                    </div>
+                    <div class="ch-row">
+                        <span class="ch-num">05</span>
+                        <div>
+                            <div class="ch-title">Getting Planted and Growing Deep</div>
+                            <p class="ch-sub">What it looks like to be fully planted — and why it's worth it</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book-3d-wrap reveal d2">
+                <img src="the local church.jpg" alt="The Local Church by John Siebeling"
+                     style="width:195px; border-radius:2px; box-shadow:0 20px 55px rgba(0,0,0,0.6); transform:perspective(800px) rotateY(-7deg);">
+                <div>
+                    <p style="font-size:11px; color:var(--text-dim); text-align:center; margin-bottom:12px; font-family:'Barlow Condensed',sans-serif; letter-spacing:0.08em; text-transform:uppercase;">Part of the Next Steps Series</p>
+                    <div class="series-chips">
+                        <span class="chip">Fresh Start</span>
+                        <span class="chip active">Local Church ✓</span>
+                        <span class="chip">Holy Spirit</span>
+                        <span class="chip">Finances</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="tan-rule"></div>
+
+<!-- ===== BUNDLES (cream) ===== -->
+<section class="section-cream" id="bundles">
+    <div class="wrap">
+        <div class="bundles-layout">
+            <div class="section-label-col reveal">
+                <div class="section-label">Order Options</div>
+            </div>
+            <div class="reveal d1">
+                <span class="eyebrow">Find the right fit for your church</span>
+                <p style="font-family:'Lora',serif; font-size:18px; color:var(--text-mid); line-height:1.75; margin-bottom:36px; max-width:580px;">Most churches start with one case and use it for new members, growth track, or guest follow-up. <em>Start small, scale when it's working.</em></p>
+
+                <div class="bundles-stack">
+                    <!-- Single -->
+                    <div class="bundle-row reveal">
+                        <div class="bundle-info">
+                            <div class="bundle-name">Single Copy</div>
+                            <p class="bundle-desc">Perfect for reviewing before ordering for your church, or as a personal gift.</p>
+                            <div class="bundle-items">
+                                <span class="bundle-item-tag">1 Book</span>
+                                <span class="bundle-item-tag">Free shipping over $35</span>
+                            </div>
+                        </div>
+                        <div class="bundle-right">
+                            <div class="bundle-price">$6</div>
+                            <span class="bundle-price-note">+ shipping on single orders</span>
+                            <!-- UPDATE: Replace with real Shopify product URL -->
+                            <a href="https://store.johnsiebeling.com" class="btn btn-cream-outline arrow" target="_blank">Order</a>
+                        </div>
+                    </div>
+
+                    <!-- New Believer Bundle — featured -->
+                    <div class="bundle-row featured reveal">
+                        <div class="bundle-info">
+                            <div class="bundle-badge">Most Popular</div>
+                            <div class="bundle-name">New Believer to Planted Bundle</div>
+                            <p class="bundle-desc">The two-book pathway: from salvation to planted. The most complete next-steps resource for new believers.</p>
+                            <div class="bundle-items">
+                                <span class="bundle-item-tag">Fresh Start with God</span>
+                                <span class="bundle-item-tag">The Local Church</span>
+                                <span class="bundle-item-tag">Free Pastor's Guide</span>
+                            </div>
+                        </div>
+                        <div class="bundle-right">
+                            <div class="bundle-price">$10 <span class="bundle-price-was">$12</span></div>
+                            <span class="bundle-price-note">per set · save 17%</span>
+                            <!-- UPDATE: Replace with real Shopify bundle URL -->
+                            <a href="https://store.johnsiebeling.com" class="btn btn-dark-fill arrow" target="_blank">Order Bundle</a>
+                        </div>
+                    </div>
+
+                    <!-- Case of 100 -->
+                    <div class="bundle-row reveal">
+                        <div class="bundle-info">
+                            <div class="bundle-name">Church Case (100 Books)</div>
+                            <p class="bundle-desc">The most effective way to implement church-wide. Use for new members, growth track, or guest follow-up all year.</p>
+                            <div class="bundle-items">
+                                <span class="bundle-item-tag">100 Books</span>
+                                <span class="bundle-item-tag">Free Pastor's Guide</span>
+                                <span class="bundle-item-tag">Free Shipping</span>
+                            </div>
+                        </div>
+                        <div class="bundle-right">
+                            <div class="bundle-price">$350</div>
+                            <span class="bundle-price-note">$3.50/book · save 42%</span>
+                            <!-- UPDATE: Replace with real Shopify product URL -->
+                            <a href="https://store.johnsiebeling.com" class="btn btn-cream-outline arrow" target="_blank">Order a Case</a>
+                        </div>
+                    </div>
+
+                    <!-- Full Series -->
+                    <div class="bundle-row reveal">
+                        <div class="bundle-info">
+                            <div class="bundle-badge">Complete Series</div>
+                            <div class="bundle-name">Next Steps Series Bundle</div>
+                            <p class="bundle-desc">All four Next Steps books — a complete discipleship pathway from day one.</p>
+                            <div class="bundle-items">
+                                <span class="bundle-item-tag">Fresh Start with God</span>
+                                <span class="bundle-item-tag">The Local Church</span>
+                                <span class="bundle-item-tag">The Holy Spirit Today</span>
+                                <span class="bundle-item-tag">Worry Free Finances</span>
+                            </div>
+                        </div>
+                        <div class="bundle-right">
+                            <div class="bundle-price">$20</div>
+                            <span class="bundle-price-note">all 4 books</span>
+                            <!-- UPDATE: Replace with real Shopify bundle URL -->
+                            <a href="https://store.johnsiebeling.com" class="btn btn-cream-outline arrow" target="_blank">Order Series</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="tan-rule"></div>
+
+<!-- ===== LEAD MAGNET (dark) ===== -->
+<section class="section-dark" id="lead-magnet">
+    <div class="wrap">
+        <div class="lm-card reveal">
+            <div class="lm-pdf">
+                <div class="lm-pdf-emoji">📋</div>
+                <div class="lm-pdf-label">Free Guide</div>
+            </div>
+            <span class="eyebrow eyebrow-light" style="display:block; text-align:center;">Free Resource for Pastors</span>
+            <div class="lm-heading">Get the Free<br>Pastor's Guide</div>
+            <p class="lm-sub">A practical 4-page guide on how to move people from attending church to being planted — includes ministry use cases, a suggested pathway, and sample language for your team.</p>
+            <form class="lm-form" onsubmit="handleGuide(event)">
+                <input type="email" class="lm-input" placeholder="Your email address" required id="lm-email">
+                <button type="submit" class="btn btn-tan arrow" id="lm-btn">Send It</button>
+            </form>
+            <p class="lm-note">No spam. Just the guide. Unsubscribe anytime.</p>
+        </div>
+    </div>
+</section>
+
+<div class="tan-rule"></div>
+
+<!-- ===== TESTIMONIALS (cream) ===== -->
+<section class="section-cream">
+    <div class="wrap">
+        <div class="testi-layout">
+            <div class="section-label-col reveal">
+                <div class="section-label">What Pastors Are Saying</div>
+            </div>
+            <div class="reveal d1">
+                <span class="eyebrow">Trusted by ministry leaders across the country</span>
+                <p style="font-family:'Lora',serif; font-size:18px; color:var(--text-mid); line-height:1.75; margin-bottom:36px; max-width:580px; font-style:italic;">From connections directors to senior pastors — here's what churches are saying.</p>
+                <div class="testi-grid">
+                    <div class="testi-card wide">
+                        <div class="stars">★★★★★</div>
+                        <p class="testi-text">"This is the resource I've been looking for. Clear, practical, and theologically grounded. We're giving it to every person who comes through our growth track now — it's become a non-negotiable part of our pathway."</p>
+                        <div class="testi-attr">
+                            <div class="testi-ava">D</div>
+                            <div>
+                                <div class="testi-name">Pastor David M.</div>
+                                <div class="testi-church">Lead Pastor, Crossroads Church</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testi-text">"Our guest connection rate improved after we started using this book. It gives people the language for the 'why' behind the local church."</p>
+                        <div class="testi-attr">
+                            <div class="testi-ava">S</div>
+                            <div>
+                                <div class="testi-name">Sarah L.</div>
+                                <div class="testi-church">Next Steps Director</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testi-text">"Simple, honest, and encouraging. Our serving team read it together and it genuinely renewed their sense of purpose."</p>
+                        <div class="testi-attr">
+                            <div class="testi-ava">T</div>
+                            <div>
+                                <div class="testi-name">Pastor Tony R.</div>
+                                <div class="testi-church">Executive Pastor</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="tan-rule"></div>
+
+<!-- ===== FAQ (dark) ===== -->
+<section class="section-dark">
+    <div class="wrap">
+        <div class="faq-inner">
+            <span class="eyebrow eyebrow-light" style="display:block; text-align:center;">Common Questions</span>
+            <div class="faq-heading">Everything You<br>Need to Know</div>
+            <div class="faq-stack">
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">How long is the book? <span class="faq-arrow">▾</span></div>
+                    <div class="faq-a"><p class="faq-a-inner">The Local Church is intentionally short — designed to be read in one or two sittings. It's long enough to shift perspective, short enough that a pastor can confidently hand it to anyone without wondering if they'll actually finish it.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">What books are in the Next Steps Series? <span class="faq-arrow">▾</span></div>
+                    <div class="faq-a"><p class="faq-a-inner">Four books: Fresh Start with God (for new believers), The Local Church (for getting planted), The Holy Spirit Today (understanding the Holy Spirit), and Worry Free Finances (biblical money principles). Each is designed to be a simple resource churches can use at key moments in someone's spiritual journey.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">How does this work alongside Fresh Start with God? <span class="faq-arrow">▾</span></div>
+                    <div class="faq-a"><p class="faq-a-inner">The natural pathway: someone makes a salvation decision → Fresh Start with God helps them begin their walk with God → The Local Church helps them understand why getting planted is their next step. Many churches give them together as a "new believer to planted" bundle, either at the same time or in sequence over a few weeks.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">Can we get a bulk discount on larger orders? <span class="faq-arrow">▾</span></div>
+                    <div class="faq-a"><p class="faq-a-inner">Yes. A case of 100 books is $350 ($3.50/book) — saving 42% compared to individual pricing. For multiple cases or larger orders, reach out at info@johnsiebeling.com and we'll help find the right option for your church.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">Is there a digital or ebook version? <span class="faq-arrow">▾</span></div>
+                    <div class="faq-a"><p class="faq-a-inner">Currently available as a physical book only. The physical book is intentionally designed to be something a pastor hands to a person — it's a tangible gift, not just a link.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">Is there a sermon prep guide or Pastor's Kit? <span class="faq-arrow">▾</span></div>
+                    <div class="faq-a"><p class="faq-a-inner">Yes. A free Pastor's Guide is available above — ministry use cases, a suggested pathway, and sample messaging. Full digital Pastor's Kits with sermon prep notes are available through the store for titles in the Next Steps Series.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="tan-rule"></div>
+
+<!-- ===== FINAL CTA (cream) ===== -->
+<section class="section-cream">
+    <div class="wrap">
+        <div class="fcta-inner">
+            <span class="eyebrow" style="display:block; text-align:center;">Ready to Get Started?</span>
+            <div class="fcta-heading">Help Your<br>People Get<br><em>Planted.</em></div>
+            <p class="fcta-sub">Give people the language to understand why the local church matters — and what their part is in building it.</p>
+            <div class="fcta-btns">
+                <a href="#bundles" class="btn btn-dark-fill btn-lg arrow">Order for Your Church</a>
+                <a href="#lead-magnet" class="btn btn-cream-outline btn-lg arrow">Free Pastor's Guide</a>
+            </div>
+            <p class="fcta-note">Questions? Email <a href="mailto:info@johnsiebeling.com">info@johnsiebeling.com</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">John <span>Siebeling</span> Ministries</div>
+        <div class="footer-links">
+            <a href="https://store.johnsiebeling.com" class="footer-link" target="_blank">Full Store</a>
+            <a href="https://store.johnsiebeling.com/pages/about" class="footer-link" target="_blank">About</a>
+            <a href="mailto:info@johnsiebeling.com" class="footer-link">Contact</a>
+            <a href="#lead-magnet" class="footer-link">Free Pastor's Guide</a>
+        </div>
+        <p class="footer-copy">© 2026 John Siebeling Ministries · 650 Houston Hill Rd, Eads, TN 38028</p>
+    </div>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="sticky-bar">
+    <div class="sticky-thumb"></div>
+    <div class="sticky-info">
+        <strong>The Local Church</strong>
+        <span>From $6 · Case of 100 for $350</span>
+    </div>
+    <a href="#bundles" class="btn btn-tan" style="padding:10px 20px; font-size:13px;">Order Now →</a>
+</div>
+
+<script>
+    // Nav
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Sticky bar
+    const stickyBar = document.getElementById('sticky-bar');
+    const heroCtas = document.querySelector('.hero-ctas');
+    if (heroCtas) {
+        new IntersectionObserver(entries => {
+            stickyBar.classList.toggle('show', !entries[0].isIntersecting);
+        }, { threshold: 0 }).observe(heroCtas);
+    }
+
+    // Scroll reveal
+    new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' })
+    .observe
+    && document.querySelectorAll('.reveal').forEach(el =>
+        new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); } });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }).observe(el)
+    );
+
+    // FAQ
+    function toggleFaq(qEl) {
+        const item = qEl.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+    }
+
+    // Lead magnet form
+    function handleGuide(e) {
+        e.preventDefault();
+        const btn = document.getElementById('lm-btn');
+        btn.textContent = 'Guide Sent! ✓';
+        btn.style.background = '#5a8a5a';
+        btn.style.borderColor = '#5a8a5a';
+        btn.disabled = true;
+        // TODO: Wire to email service (Klaviyo / Mailchimp / etc.)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Options — JSM Resource Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        img { display: block; max-width: 100%; }
+
+        /* ── LABEL BANNER ── */
+        .option-label {
+            background: #111;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 12px 48px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .option-label span {
+            background: #fff;
+            color: #111;
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 11px;
+        }
+
+        /* ── SHARED HERO SHELL ── */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            align-items: center;
+            gap: 72px;
+            padding: 100px 80px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* NAV */
+        .mock-nav {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            padding: 22px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .nav-logo span { opacity: 0.55; }
+
+        .nav-btn {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 10px 24px;
+            border-radius: 100px;
+            border: 2px solid;
+            text-decoration: none;
+            cursor: default;
+        }
+
+        /* HERO CONTENT */
+        .hero-series {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .hero-series::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 1.5px;
+            flex-shrink: 0;
+        }
+
+        .hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: clamp(52px, 6vw, 84px);
+            text-transform: uppercase;
+            line-height: 0.94;
+            letter-spacing: 0.01em;
+            margin-bottom: 24px;
+        }
+
+        .hero-sub {
+            font-family: 'Lora', serif;
+            font-size: 17px;
+            line-height: 1.75;
+            max-width: 480px;
+            margin-bottom: 40px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 14px 30px;
+            border-radius: 100px;
+            border: 2px solid;
+            text-decoration: none;
+            cursor: default;
+            display: inline-block;
+        }
+
+        /* BOOK CARD */
+        .book-card {
+            border-radius: 24px;
+            padding: 36px 28px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .book-card img {
+            width: 160px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+
+        .book-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+        }
+
+        .book-author {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .book-price {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .book-btn {
+            width: 100%;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 13px 20px;
+            border-radius: 100px;
+            border: 2px solid;
+            cursor: default;
+            text-align: center;
+        }
+
+        /* divider */
+        .divider { height: 8px; background: #000; }
+
+
+        /* ════════════════════════════════════════
+           OPTION 1 — PURE BLACK
+           Bold, editorial. The colorful books pop.
+           ════════════════════════════════════════ */
+        .o1 { background: #0A0A0A; }
+
+        .o1 .mock-nav .nav-logo { color: #fff; }
+        .o1 .mock-nav .nav-logo span { color: rgba(255,255,255,0.45); }
+        .o1 .nav-btn { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+        .o1 .hero-series { color: rgba(255,255,255,0.45); }
+        .o1 .hero-series::before { background: rgba(255,255,255,0.3); }
+
+        .o1 h1 { color: #fff; }
+        .o1 .hero-sub { color: rgba(255,255,255,0.55); }
+
+        .o1 .btn-a { color: #fff; background: #fff; color: #0A0A0A; border-color: #fff; }
+        .o1 .btn-b { color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.3); background: transparent; }
+
+        .o1 .book-card {
+            background: #fff;
+            box-shadow: 0 32px 72px rgba(0,0,0,0.7);
+        }
+        .o1 .book-title { color: #0A0A0A; }
+        .o1 .book-author { color: #777; }
+        .o1 .book-price { color: #333; }
+        .o1 .book-btn { background: #0A0A0A; color: #fff; border-color: #0A0A0A; }
+
+        /* ════════════════════════════════════════
+           OPTION 2 — DEEP NAVY
+           Classic, trustworthy, premium ministry.
+           ════════════════════════════════════════ */
+        .o2 { background: #0D1B2A; }
+
+        .o2 .mock-nav .nav-logo { color: #fff; }
+        .o2 .mock-nav .nav-logo span { color: rgba(255,255,255,0.4); }
+        .o2 .nav-btn { color: #fff; border-color: rgba(255,255,255,0.25); }
+
+        .o2 .hero-series { color: rgba(255,255,255,0.4); }
+        .o2 .hero-series::before { background: rgba(255,255,255,0.25); }
+
+        .o2 h1 { color: #fff; }
+        .o2 .hero-sub { color: rgba(255,255,255,0.55); }
+
+        .o2 .btn-a { background: #fff; color: #0D1B2A; border-color: #fff; }
+        .o2 .btn-b { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.3); background: transparent; }
+
+        .o2 .book-card {
+            background: #fff;
+            box-shadow: 0 32px 72px rgba(0,0,0,0.5);
+        }
+        .o2 .book-title { color: #0D1B2A; }
+        .o2 .book-author { color: #888; }
+        .o2 .book-price { color: #444; }
+        .o2 .book-btn { background: #0D1B2A; color: #fff; border-color: #0D1B2A; }
+
+        /* ════════════════════════════════════════
+           OPTION 3 — CLEAN WHITE
+           Light, open, modern. Book is the hero.
+           ════════════════════════════════════════ */
+        .o3 { background: #FFFFFF; }
+
+        .o3 .mock-nav .nav-logo { color: #111; }
+        .o3 .mock-nav .nav-logo span { color: rgba(0,0,0,0.35); }
+        .o3 .nav-btn { color: #111; border-color: rgba(0,0,0,0.2); }
+
+        .o3 .hero-series { color: rgba(0,0,0,0.4); }
+        .o3 .hero-series::before { background: rgba(0,0,0,0.25); }
+
+        .o3 h1 { color: #0A0A12; }
+        .o3 .hero-sub { color: #555; }
+
+        .o3 .btn-a { background: #111; color: #fff; border-color: #111; }
+        .o3 .btn-b { color: #333; border-color: rgba(0,0,0,0.2); background: transparent; }
+
+        .o3 .book-card {
+            background: #F2F2F7;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+        .o3 .book-title { color: #0A0A12; }
+        .o3 .book-author { color: #888; }
+        .o3 .book-price { color: #555; }
+        .o3 .book-btn { background: #111; color: #fff; border-color: #111; }
+
+        /* ════════════════════════════════════════
+           OPTION 4 — CHARCOAL + WHITE SPLIT
+           Bold layout: dark left, white card right.
+           Strong, asymmetric, confident.
+           ════════════════════════════════════════ */
+        .o4 {
+            background: #1E1E22;
+            position: relative;
+        }
+
+        .o4::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 42%;
+            height: 100%;
+            background: #F5F5F7;
+            z-index: 0;
+        }
+
+        .o4 .mock-nav { z-index: 2; }
+        .o4 .mock-nav .nav-logo { color: #fff; }
+        .o4 .mock-nav .nav-logo span { color: rgba(255,255,255,0.4); }
+        .o4 .nav-btn { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+        .o4 .hero-content { position: relative; z-index: 1; }
+        .o4 .hero-book { position: relative; z-index: 1; }
+
+        .o4 .hero-series { color: rgba(255,255,255,0.4); }
+        .o4 .hero-series::before { background: rgba(255,255,255,0.3); }
+
+        .o4 h1 { color: #fff; }
+        .o4 .hero-sub { color: rgba(255,255,255,0.55); }
+
+        .o4 .btn-a { background: #fff; color: #1E1E22; border-color: #fff; }
+        .o4 .btn-b { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.3); background: transparent; }
+
+        .o4 .book-card {
+            background: transparent;
+            box-shadow: none;
+            padding: 40px 28px;
+        }
+        .o4 .book-title { color: #1E1E22; }
+        .o4 .book-author { color: #888; }
+        .o4 .book-price { color: #444; }
+        .o4 .book-btn { background: #1E1E22; color: #fff; border-color: #1E1E22; }
+
+        .o4 .book-card img {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        /* ════════════════════════════════════════
+           OPTION 5 — DARK GREEN
+           Earthy, warm, alive. Nods to Fresh Start.
+           Bold but not corporate.
+           ════════════════════════════════════════ */
+        .o5 { background: #0F2318; }
+
+        .o5 .mock-nav .nav-logo { color: #fff; }
+        .o5 .mock-nav .nav-logo span { color: rgba(255,255,255,0.4); }
+        .o5 .nav-btn { color: #fff; border-color: rgba(255,255,255,0.25); }
+
+        .o5 .hero-series { color: rgba(255,255,255,0.4); }
+        .o5 .hero-series::before { background: rgba(255,255,255,0.25); }
+
+        .o5 h1 { color: #fff; }
+        .o5 h1 em { font-style: italic; color: #7AB648; }
+
+        .o5 .hero-sub { color: rgba(255,255,255,0.55); }
+
+        .o5 .btn-a { background: #7AB648; color: #fff; border-color: #7AB648; }
+        .o5 .btn-b { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.3); background: transparent; }
+
+        .o5 .book-card {
+            background: #fff;
+            box-shadow: 0 32px 72px rgba(0,0,0,0.55);
+        }
+        .o5 .book-title { color: #0F2318; }
+        .o5 .book-author { color: #777; }
+        .o5 .book-price { color: #444; }
+        .o5 .book-btn { background: #0F2318; color: #fff; border-color: #0F2318; }
+    </style>
+</head>
+<body>
+
+<!-- ══ OPTION 1 ══ -->
+<div class="option-label">Option 1 — Pure Black <span>Bold / Editorial</span></div>
+<div class="hero o1">
+    <div class="mock-nav">
+        <div class="nav-logo">John <span>Siebeling</span> Ministries</div>
+        <a class="nav-btn" style="border-color:rgba(255,255,255,0.3); color:#fff; background:transparent;">Order Now →</a>
+    </div>
+    <div class="hero-content">
+        <div class="hero-series" style="color:rgba(255,255,255,0.45);">New Book — Next Steps Series</div>
+        <h1 style="color:#fff;">Move People<br>From <em style="font-style:italic; color:rgba(255,255,255,0.5);">Attending</em><br>To Planted.</h1>
+        <p class="hero-sub" style="color:rgba(255,255,255,0.5);">The Local Church gives pastors a simple, biblical resource to help people understand why the local church matters — and how to take their next step.</p>
+        <div class="hero-ctas">
+            <a class="btn" style="background:#fff; color:#0A0A0A; border-color:#fff;">Order for Your Church →</a>
+            <a class="btn" style="color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.3); background:transparent;">Free Pastor's Guide →</a>
+        </div>
+    </div>
+    <div class="hero-book">
+        <div class="book-card" style="background:#fff; box-shadow:0 32px 72px rgba(0,0,0,0.7);">
+            <img src="the local church.jpg" alt="The Local Church">
+            <div class="book-title" style="color:#0A0A0A;">The Local Church</div>
+            <div class="book-author" style="color:#777;">by John Siebeling</div>
+            <div class="book-price" style="color:#333;">From $6 · Case of 100 for $350</div>
+            <div class="book-btn" style="background:#0A0A0A; color:#fff; border-color:#0A0A0A;">Order for Your Church →</div>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ OPTION 2 ══ -->
+<div class="option-label">Option 2 — Deep Navy <span>Classic / Premium</span></div>
+<div class="hero o2">
+    <div class="mock-nav">
+        <div class="nav-logo" style="color:#fff;">John <span style="color:rgba(255,255,255,0.4);">Siebeling</span> Ministries</div>
+        <a class="nav-btn" style="border-color:rgba(255,255,255,0.25); color:#fff; background:transparent;">Order Now →</a>
+    </div>
+    <div class="hero-content">
+        <div class="hero-series" style="color:rgba(255,255,255,0.4);">New Book — Next Steps Series</div>
+        <h1 style="color:#fff;">Move People<br>From <em style="font-style:italic; color:rgba(255,255,255,0.45);">Attending</em><br>To Planted.</h1>
+        <p class="hero-sub" style="color:rgba(255,255,255,0.5);">The Local Church gives pastors a simple, biblical resource to help people understand why the local church matters — and how to take their next step.</p>
+        <div class="hero-ctas">
+            <a class="btn" style="background:#fff; color:#0D1B2A; border-color:#fff;">Order for Your Church →</a>
+            <a class="btn" style="color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.25); background:transparent;">Free Pastor's Guide →</a>
+        </div>
+    </div>
+    <div class="hero-book">
+        <div class="book-card" style="background:#fff; box-shadow:0 32px 72px rgba(0,0,0,0.5);">
+            <img src="the local church.jpg" alt="The Local Church">
+            <div class="book-title" style="color:#0D1B2A;">The Local Church</div>
+            <div class="book-author" style="color:#888;">by John Siebeling</div>
+            <div class="book-price" style="color:#444;">From $6 · Case of 100 for $350</div>
+            <div class="book-btn" style="background:#0D1B2A; color:#fff; border-color:#0D1B2A;">Order for Your Church →</div>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ OPTION 3 ══ -->
+<div class="option-label">Option 3 — Clean White <span>Light / Modern</span></div>
+<div class="hero o3">
+    <div class="mock-nav">
+        <div class="nav-logo" style="color:#111;">John <span style="color:rgba(0,0,0,0.35);">Siebeling</span> Ministries</div>
+        <a class="nav-btn" style="border-color:rgba(0,0,0,0.18); color:#111; background:transparent;">Order Now →</a>
+    </div>
+    <div class="hero-content">
+        <div class="hero-series" style="color:rgba(0,0,0,0.38);">New Book — Next Steps Series</div>
+        <h1 style="color:#0A0A12;">Move People<br>From <em style="font-style:italic; color:rgba(0,0,0,0.4);">Attending</em><br>To Planted.</h1>
+        <p class="hero-sub" style="color:#555;">The Local Church gives pastors a simple, biblical resource to help people understand why the local church matters — and how to take their next step.</p>
+        <div class="hero-ctas">
+            <a class="btn" style="background:#111; color:#fff; border-color:#111;">Order for Your Church →</a>
+            <a class="btn" style="color:#333; border-color:rgba(0,0,0,0.2); background:transparent;">Free Pastor's Guide →</a>
+        </div>
+    </div>
+    <div class="hero-book">
+        <div class="book-card" style="background:#F0F0F5; box-shadow:0 20px 60px rgba(0,0,0,0.1);">
+            <img src="the local church.jpg" alt="The Local Church" style="box-shadow:0 8px 30px rgba(0,0,0,0.15);">
+            <div class="book-title" style="color:#0A0A12;">The Local Church</div>
+            <div class="book-author" style="color:#888;">by John Siebeling</div>
+            <div class="book-price" style="color:#555;">From $6 · Case of 100 for $350</div>
+            <div class="book-btn" style="background:#111; color:#fff; border-color:#111;">Order for Your Church →</div>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ OPTION 4 ══ -->
+<div class="option-label">Option 4 — Dark / White Split <span>Bold / Asymmetric</span></div>
+<div class="hero o4">
+    <div class="mock-nav" style="z-index:2;">
+        <div class="nav-logo" style="color:#fff; position:relative; z-index:2;">John <span style="color:rgba(255,255,255,0.4);">Siebeling</span> Ministries</div>
+        <a class="nav-btn" style="border-color:rgba(255,255,255,0.3); color:#fff; background:transparent; position:relative; z-index:2;">Order Now →</a>
+    </div>
+    <div class="hero-content" style="position:relative; z-index:1;">
+        <div class="hero-series" style="color:rgba(255,255,255,0.4);">New Book — Next Steps Series</div>
+        <h1 style="color:#fff;">Move People<br>From <em style="font-style:italic; color:rgba(255,255,255,0.45);">Attending</em><br>To Planted.</h1>
+        <p class="hero-sub" style="color:rgba(255,255,255,0.5);">The Local Church gives pastors a simple, biblical resource to help people understand why the local church matters — and how to take their next step.</p>
+        <div class="hero-ctas">
+            <a class="btn" style="background:#fff; color:#1E1E22; border-color:#fff;">Order for Your Church →</a>
+            <a class="btn" style="color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.3); background:transparent;">Free Pastor's Guide →</a>
+        </div>
+    </div>
+    <div class="hero-book" style="position:relative; z-index:1;">
+        <div class="book-card" style="background:transparent; box-shadow:none; padding:40px 28px;">
+            <img src="the local church.jpg" alt="The Local Church" style="box-shadow:0 20px 50px rgba(0,0,0,0.2);">
+            <div class="book-title" style="color:#1E1E22;">The Local Church</div>
+            <div class="book-author" style="color:#888;">by John Siebeling</div>
+            <div class="book-price" style="color:#444;">From $6 · Case of 100 for $350</div>
+            <div class="book-btn" style="background:#1E1E22; color:#fff; border-color:#1E1E22;">Order for Your Church →</div>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ OPTION 5 ══ -->
+<div class="option-label">Option 5 — Dark Forest Green <span>Warm / Alive</span></div>
+<div class="hero o5">
+    <div class="mock-nav">
+        <div class="nav-logo" style="color:#fff;">John <span style="color:rgba(255,255,255,0.4);">Siebeling</span> Ministries</div>
+        <a class="nav-btn" style="border-color:rgba(255,255,255,0.25); color:#fff; background:transparent;">Order Now →</a>
+    </div>
+    <div class="hero-content">
+        <div class="hero-series" style="color:rgba(255,255,255,0.4);">New Book — Next Steps Series</div>
+        <h1 style="color:#fff;">Move People<br>From <em style="font-style:italic; color:#7AB648;">Attending</em><br>To Planted.</h1>
+        <p class="hero-sub" style="color:rgba(255,255,255,0.5);">The Local Church gives pastors a simple, biblical resource to help people understand why the local church matters — and how to take their next step.</p>
+        <div class="hero-ctas">
+            <a class="btn" style="background:#7AB648; color:#fff; border-color:#7AB648;">Order for Your Church →</a>
+            <a class="btn" style="color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.3); background:transparent;">Free Pastor's Guide →</a>
+        </div>
+    </div>
+    <div class="hero-book">
+        <div class="book-card" style="background:#fff; box-shadow:0 32px 72px rgba(0,0,0,0.55);">
+            <img src="the local church.jpg" alt="The Local Church">
+            <div class="book-title" style="color:#0F2318;">The Local Church</div>
+            <div class="book-author" style="color:#777;">by John Siebeling</div>
+            <div class="book-price" style="color:#444;">From $6 · Case of 100 for $350</div>
+            <div class="book-btn" style="background:#0F2318; color:#fff; border-color:#0F2318;">Order for Your Church →</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

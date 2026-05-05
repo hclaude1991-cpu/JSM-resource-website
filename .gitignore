@@ -1,0 +1,11 @@
+# Secrets
+.env
+.env.local
+.env.*
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Local Claude context
+CLAUDE.local.md
